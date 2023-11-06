@@ -17,7 +17,7 @@ const TagsContainer = styled.div`
   padding: 4em 0;
 `;
 
-const Galeria = () => {
+const Galeria = ({ fotos = [] }) => {
   return (
     <>
       <TagsContainer>
@@ -27,6 +27,11 @@ const Galeria = () => {
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>
+          <ul>
+            {fotos.map((foto) => (
+              <li>{foto.titulo}</li>
+            ))}
+          </ul>
         </SecaoFluida>
         <Populares />
       </GaleriaContainer>
