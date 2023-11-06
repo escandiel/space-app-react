@@ -3,7 +3,6 @@ import styled from "styled-components";
 const BannerEstilizado = styled.div`
   width: 1156px;
   height: 328px;
-  /* background-image: url("/public/banner.svg"); */
   background-image: ${(props) => props.backgroundImage};
   position: relative;
   border-radius: 16px;
