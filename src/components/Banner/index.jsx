@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 const BannerEstilizado = styled.div`
-  width: 1156px;
-  height: 328px;
+  min-height: 328px;
+  max-width: 100%;
   background-image: ${(props) => props.backgroundImage};
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   border-radius: 16px;
   span {
