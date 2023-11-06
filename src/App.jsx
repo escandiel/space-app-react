@@ -21,17 +21,24 @@ const AppContainer = styled.div`
   max-width: 100%;
 `;
 
+const MainContainer = styled.main`
+  display: flex;
+  gap: 24px;
+`;
+
 function App() {
   return (
     <FundoGradiente>
       <EstilosGlobais />
       <AppContainer>
         <Cabecalho />
-        <BarraLateral />
-        <Banner
-          backgroundImage="url('/banner.svg')"
-          spanContent={"A galeria mais completa de fotos do espaço!"}
-        />
+        <MainContainer>
+          <BarraLateral />
+          <Banner
+            backgroundImage="url('/banner.svg')"
+            spanContent={"A galeria mais completa de fotos do espaço!"}
+          />
+        </MainContainer>
       </AppContainer>
     </FundoGradiente>
   );
