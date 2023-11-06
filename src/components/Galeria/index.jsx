@@ -11,10 +11,19 @@ const SecaoFluida = styled.section`
   flex-grow: 1;
 `;
 
+const TagsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  padding: 4em 0;
+`;
+
 const Galeria = () => {
   return (
     <>
-      <Tags />
+      <TagsContainer>
+        <Tags />
+      </TagsContainer>
+
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>

@@ -7,7 +7,7 @@ const BannerEstilizado = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  border-radius: 16px;
+  border-radius: 24px;
   span {
     width: 301px;
     height: 144px;
