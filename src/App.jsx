@@ -21,7 +21,10 @@ function App() {
       <EstilosGlobais />
       <Cabecalho />
       <BarraLateral />
-      <Banner />
+      <Banner
+        backgroundImage="url('/banner.svg')"
+        spanContent={"A galeria mais completa de fotos do espaço!"}
+      />
     </FundoGradiente>
   );
 }

@@ -3,7 +3,8 @@ import styled from "styled-components";
 const BannerEstilizado = styled.div`
   width: 1156px;
   height: 328px;
-  background-image: url("/public/banner.svg");
+  /* background-image: url("/public/banner.svg"); */
+  background-image: ${(props) => props.backgroundImage};
   position: relative;
   border-radius: 16px;
   span {
@@ -21,10 +22,10 @@ const BannerEstilizado = styled.div`
   }
 `;
 
-const Banner = () => {
+const Banner = ({ backgroundImage, spanContent }) => {
   return (
-    <BannerEstilizado>
-      <span>A galeria mais completa de fotos do espaço</span>
+    <BannerEstilizado backgroundImage={backgroundImage}>
+      <span>{spanContent}</span>
     </BannerEstilizado>
   );
 };
