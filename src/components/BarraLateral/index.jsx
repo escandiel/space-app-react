@@ -24,7 +24,7 @@ const BarraLateral = () => {
             iconeAtivo="/icones/mais-vistas-ativo.png"
             iconeInativo="/icones/mais-vistas-inativo.png "
           >
-            Mais vistos
+            Mais vistas
           </ItemNavegacao>
         </ListaEstilizada>
       </nav>
