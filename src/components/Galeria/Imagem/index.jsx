@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import BotaoIcone from "../../BotaoIcone";
 
 const Figure = styled.figure`
   width: ${(props) => (props.$expandida ? "90%" : "460px")};
@@ -18,16 +19,26 @@ const Figure = styled.figure`
     padding: 12px;
     h3 {
       font-family: "GandhiSansBold";
+      font-weight: 300;
+      font-size: 20px;
     }
     h4 {
       flex-grow: 1;
+      font-family: "GandhiSansRegular";
+      font-weight: 100;
+      font-size: 16px;
     }
     h3,
     h4 {
       margin: 0;
-      font-size: 16px;
     }
   }
+`;
+
+const Rodape = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Imagem = ({ foto, expandida = false }) => {
@@ -36,11 +47,11 @@ const Imagem = ({ foto, expandida = false }) => {
       <img src={foto.path} alt={foto.alt} />
       <figcaption>
         <h3>{foto.titulo}</h3>
-        <footer>
+        <Rodape>
           <h4>{foto.fonte}</h4>
-          <button>Favorito</button>
-          <button>Expandir</button>
-        </footer>
+          <BotaoIcone>Favorito</BotaoIcone>
+          <BotaoIcone>Expandir</BotaoIcone>
+        </Rodape>
       </figcaption>
     </Figure>
   );
