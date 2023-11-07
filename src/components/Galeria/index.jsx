@@ -18,6 +18,13 @@ const TagsContainer = styled.div`
   padding: 4em 0;
 `;
 
+const ImagensContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
+
 const Galeria = ({ fotos = [] }) => {
   return (
     <>
@@ -28,11 +35,11 @@ const Galeria = ({ fotos = [] }) => {
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>
-          <ul>
+          <ImagensContainer>
             {fotos.map((foto) => (
               <Imagem key={foto.id} foto={foto} />
             ))}
-          </ul>
+          </ImagensContainer>
         </SecaoFluida>
         <Populares />
       </GaleriaContainer>
