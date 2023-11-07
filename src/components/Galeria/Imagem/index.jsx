@@ -1,5 +1,12 @@
 import styled from "styled-components";
 import BotaoIcone from "../../BotaoIcone";
+import {
+  AiFillHeart,
+  AiOutlineHeart,
+  AiOutlineExpandAlt,
+} from "react-icons/ai";
+import { BsArrowsAngleExpand } from "react-icons/bs";
+import { useState } from "react";
 
 const Figure = styled.figure`
   width: ${(props) => (props.$expandida ? "90%" : "460px")};
@@ -42,6 +49,15 @@ const Rodape = styled.footer`
 `;
 
 const Imagem = ({ foto, expandida = false }) => {
+  const [icones, setIcones] = useState({
+    favoritado: false,
+    expandido: false,
+  });
+
+  const handleClicks = (icone) => {
+    setIcones({ ...icones, [icone]: !icones[icone] });
+  };
+
   return (
     <Figure $expandida={expandida} id={`foto- ${foto.id}`}>
       <img src={foto.path} alt={foto.alt} />
@@ -49,8 +65,20 @@ const Imagem = ({ foto, expandida = false }) => {
         <h3>{foto.titulo}</h3>
         <Rodape>
           <h4>{foto.fonte}</h4>
-          <BotaoIcone>Favorito</BotaoIcone>
-          <BotaoIcone>Expandir</BotaoIcone>
+          <BotaoIcone onClick={() => handleClicks("favoritado")}>
+            {icones.favoritado ? (
+              <AiFillHeart size={30} color="#c98cf1" />
+            ) : (
+              <AiOutlineHeart color="white" size={30} />
+            )}
+          </BotaoIcone>
+          <BotaoIcone onClick={() => handleClicks("expandido")}>
+            {icones.expandido ? (
+              <BsArrowsAngleExpand size={30} color="white" />
+            ) : (
+              <AiOutlineExpandAlt size={30} color="white" />
+            )}
+          </BotaoIcone>
         </Rodape>
       </figcaption>
     </Figure>
