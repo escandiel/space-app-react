@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Imagem from "../Galeria/Imagem";
+import { AiOutlineClose } from "react-icons/ai";
+import { useState } from "react";
 
 const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
@@ -13,31 +15,53 @@ const Overlay = styled.div`
 const DialogEstilizado = styled.dialog`
   position: absolute;
   top: 294px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent; //tira a borda default do dialog
+
+  && Figure {
+    width: 1156px;
+    height: 740px;
+    border: none !important;
+  }
 `;
 
-const ModalZoom = ({ foto }) => {
+const BotaoSairModalEstilizado = styled.button`
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  border: none;
+`;
+
+const IconeFechar = styled(AiOutlineClose)`
+  color: white;
+  font-size: 28px;
+`;
+
+const BotaoSairModal = () => {
+  return (
+    <BotaoSairModalEstilizado>
+      <IconeFechar />
+    </BotaoSairModalEstilizado>
+  );
+};
+
+const ModalZoom = ({ foto, aoFechar }) => {
   return (
     <>
       {foto && (
         <>
           <Overlay />
-          <DialogEstilizado open={!!foto}>
+          <DialogEstilizado open={!!foto} onClose={aoFechar}>
             <Imagem foto={foto} expandida={true} />
-            <p>Exemplo do Mozilla</p>
             <form method="dialog">
-              <button type="submit">ok</button>
+              <BotaoSairModal />
             </form>
           </DialogEstilizado>
         </>
       )}
-
-      {/* <dialog open={!!foto}>
-        <Imagem foto={foto} expandida={true} />
-        <p>Exemplo do Mozilla</p>
-        <form method="dialog">
-          <button type="submit">ok</button>
-        </form>
-      </dialog> */}
     </>
   );
 };

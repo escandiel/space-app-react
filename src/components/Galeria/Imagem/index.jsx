@@ -71,9 +71,14 @@ const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
               <AiOutlineHeart color="white" size={30} />
             )}
           </BotaoIcone>
-          <BotaoIcone onClick={() => aoZoomSolicitado(foto)}>
+          {!expandida && (
+            <BotaoIcone onClick={() => aoZoomSolicitado(foto)}>
+              <AiOutlineExpandAlt size={30} color="white" />
+            </BotaoIcone>
+          )}
+          {/* <BotaoIcone onClick={() => aoZoomSolicitado(foto)}>
             <AiOutlineExpandAlt size={30} color="white" />
-          </BotaoIcone>
+          </BotaoIcone> */}
         </Rodape>
       </figcaption>
     </Figure>
