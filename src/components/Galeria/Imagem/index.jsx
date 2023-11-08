@@ -48,12 +48,10 @@ const Rodape = styled.footer`
 `;
 
 const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
-  const [icones, setIcones] = useState({
-    favoritado: false,
-  });
+  const [favoritada, setFavoritada] = useState(false);
 
-  const handleClicks = (icone) => {
-    setIcones({ ...icones, [icone]: !icones[icone] });
+  const handleClicks = () => {
+    setFavoritada(foto.id);
   };
 
   return (
@@ -63,8 +61,8 @@ const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
         <h3>{foto.titulo}</h3>
         <Rodape>
           <h4>{foto.fonte}</h4>
-          <BotaoIcone onClick={() => handleClicks("favoritado")}>
-            {icones.favoritado ? (
+          <BotaoIcone onClick={handleClicks}>
+            {favoritada ? (
               <AiFillHeart size={30} color="#c98cf1" />
             ) : (
               <AiOutlineHeart color="white" size={30} />
@@ -75,9 +73,6 @@ const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
               <AiOutlineExpandAlt size={30} color="white" />
             </BotaoIcone>
           )}
-          {/* <BotaoIcone onClick={() => aoZoomSolicitado(foto)}>
-            <AiOutlineExpandAlt size={30} color="white" />
-          </BotaoIcone> */}
         </Rodape>
       </figcaption>
     </Figure>

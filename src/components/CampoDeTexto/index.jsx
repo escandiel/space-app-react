@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import search from "/search.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ContainerEstilizado = styled.div`
   position: relative;
@@ -33,6 +33,10 @@ const IconeLupa = styled.img`
 
 const CampoDeTexto = ({ placeholder }) => {
   const [valorInput, setValorInput] = useState("");
+
+  useEffect(() => {
+    console.log("Valor do input mudou: ", valorInput);
+  }, [valorInput]);
 
   const handleInputChange = (evento) => {
     setValorInput(evento.target.value);
