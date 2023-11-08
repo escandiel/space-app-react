@@ -28,8 +28,8 @@ Para executar o projeto localmente, siga estes passos:
 2. Clone este repositório.
 3. Abra o terminal na pasta raiz do projeto.
 4. Execute `npm install` para instalar as dependências.
-5. Execute `npm start` para iniciar o aplicativo.
-6. Acesse `http://localhost:3000` no seu navegador para visualizar o projeto.
+5. Execute `npm run dev` para iniciar o aplicativo.
+6. Acesse `http://localhost:5173` no seu navegador para visualizar o projeto.
 
 ## Contribuições
 
