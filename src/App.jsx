@@ -7,6 +7,7 @@ import Galeria from "./components/Galeria";
 import fotos from "./fotos.json";
 import { useState } from "react";
 import ModalZoom from "./components/ModalZoom";
+import Populares from "./components/Galeria/Populares";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(

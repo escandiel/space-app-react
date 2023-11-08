@@ -5,7 +5,6 @@ import {
   AiOutlineHeart,
   AiOutlineExpandAlt,
 } from "react-icons/ai";
-import { BsArrowsAngleExpand } from "react-icons/bs";
 import { useState } from "react";
 
 const Figure = styled.figure`
