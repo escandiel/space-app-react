@@ -48,10 +48,9 @@ const Rodape = styled.footer`
   align-items: center;
 `;
 
-const Imagem = ({ foto, expandida = false }) => {
+const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
   const [icones, setIcones] = useState({
     favoritado: false,
-    expandido: false,
   });
 
   const handleClicks = (icone) => {
@@ -72,12 +71,8 @@ const Imagem = ({ foto, expandida = false }) => {
               <AiOutlineHeart color="white" size={30} />
             )}
           </BotaoIcone>
-          <BotaoIcone onClick={() => handleClicks("expandido")}>
-            {icones.expandido ? (
-              <BsArrowsAngleExpand size={30} color="white" />
-            ) : (
-              <AiOutlineExpandAlt size={30} color="white" />
-            )}
+          <BotaoIcone onClick={() => aoZoomSolicitado(foto)}>
+            <AiOutlineExpandAlt size={30} color="white" />
           </BotaoIcone>
         </Rodape>
       </figcaption>
