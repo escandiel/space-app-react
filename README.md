@@ -16,16 +16,6 @@ O projeto utiliza as tecnologias:
 - Exibição de informações sobre imagens da galáxia.
 - Utilização de hooks básicos do React, como useState.
 
-## Estrutura do Projeto
-
-O projeto está estruturado da seguinte forma:
-
-- `src/`: Contém os arquivos fonte do projeto.
-  - `components/`: Componentes React.
-  - `styles/`: Estilos usando Styled Components.
-  - `data/`: Arquivos com informações mockadas.
-  - `App.js`: Arquivo principal do aplicativo.
-
 ## Em Andamento
 
 O projeto ainda não está 100% completo. Planejo expandi-lo além do que foi apresentado no curso, incluindo novas funcionalidades, aprimorando a interface e a usabilidade.
